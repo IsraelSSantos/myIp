@@ -1,11 +1,8 @@
 import './App.scss';
 import React, { useState, useEffect } from 'react';
-import Button from '@material-ui/core/Button';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+import SearchBar from './SearchBar/SearchBar'
 
 import Api from './Api'
-
 
 function App() {
 
@@ -22,23 +19,8 @@ function App() {
 
   return (
     <div className="App">
-
-      <h1> Ip: {ip.ip} </h1>
-      <h1> Country: {ip.country} </h1>
-      <h1> cc: {ip.cc} </h1>
-      <Button variant="contained" color="primary">
-        Hello World
-      </Button>
-      <Box
-        component="form"
-        sx={{
-          '& > :not(style)': { m: 1, width: '25ch' },
-        }}
-        noValidate
-        autoComplete="off"
-      />
-      <br />
-      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+      <h1>IP Adress Tracker </h1>
+      <SearchBar />
     </div>
   );
 }
