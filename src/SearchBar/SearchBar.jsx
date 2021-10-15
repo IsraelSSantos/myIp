@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./searchBar.scss";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
+import Button from "../../node_modules/@material-ui/core/Button";
+import TextField from "../../node_modules/@material-ui/core/TextField";
 import ArrowForwardIosOutlined from "@material-ui/icons/ArrowForwardIosOutlined";
 import axios from "axios";
 import $ from "jquery";
@@ -24,7 +24,6 @@ let SearchBar = (props) => {
           ${response.data.as.asn}`
         );
         changeTimeZoneOnCard(3, `UTC${response.data.location.timezone} `);
-        console.log(response.data);
         changeIsp(4, response.data.isp);
       })
       .catch((error) => {
@@ -45,7 +44,6 @@ let SearchBar = (props) => {
   let changeIpOnCard = (id, value) => {
     $(`#${id}`).html(`${value}`);
   };
-
   let changeLocationOnCard = (id, locationValue) => {
     $(`#${id}`).html(`${locationValue}`);
   };
