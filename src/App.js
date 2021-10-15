@@ -1,5 +1,5 @@
 import './App.scss';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import SearchBar from './SearchBar/SearchBar'
 import InfoLocate from './InfoLocate/InfoLocate';
 import Map from './Map/Map'
