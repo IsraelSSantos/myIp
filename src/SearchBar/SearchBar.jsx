@@ -18,7 +18,14 @@ let SearchBar = (props) => {
       .then((response) => {
         setIp(response.data.ip);
         changeIpOnCard(1, response.data.ip);
+        changeLocationOnCard(
+          2,
+          `${response.data.location.region}, ${response.data.location.country} 
+          ${response.data.as.asn}`
+        );
+        changeTimeZoneOnCard(3, `UTC${response.data.location.timezone} `);
         console.log(response.data);
+        changeIsp(4, response.data.isp);
       })
       .catch((error) => {
         console.warn("Algo inesperado aconteceu :( " + error);
@@ -27,6 +34,7 @@ let SearchBar = (props) => {
   async function setIpOnCard(label) {
     let ipSet = await initApi(label);
   }
+
   useEffect(() => {}, []);
 
   let getInputValue = (event) => {
@@ -36,6 +44,22 @@ let SearchBar = (props) => {
 
   let changeIpOnCard = (id, value) => {
     $(`#${id}`).html(`${value}`);
+  };
+
+  let changeLocationOnCard = (id, locationValue) => {
+    $(`#${id}`).html(`${locationValue}`);
+  };
+  let changeTimeZoneOnCard = (id, timezoneValue) => {
+    $(`#${id}`).html(`${timezoneValue}`);
+  };
+  let changeIsp = (id, isp) => {
+    $(`#${id}`).html(`${isp}`);
+  };
+
+  let callAllFunc = () => {
+    setIpOnCard(label);
+    changeLocationOnCard();
+    changeTimeZoneOnCard();
   };
 
   return (
@@ -55,7 +79,7 @@ let SearchBar = (props) => {
           className="btn-search"
           color="primary"
           onClick={() => {
-            setIpOnCard(label)
+            callAllFunc();
           }}
         >
           <ArrowForwardIosOutlined />
