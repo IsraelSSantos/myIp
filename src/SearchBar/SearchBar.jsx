@@ -7,7 +7,6 @@ import axios from "axios";
 import $ from "jquery";
 
 let SearchBar = (props) => {
-  let [ip, setIp] = useState([]);
   let [label, setLabel] = useState("");
 
   async function initApi(label) {
@@ -16,7 +15,6 @@ let SearchBar = (props) => {
         `https://geo.ipify.org/api/v2/country?apiKey=at_sHxDGp8Lay2D3N9Wpn0YP4wlVhn9K&ipAddress=${label}`
       )
       .then((response) => {
-        setIp(response.data.ip);
         changeIpOnCard(1, response.data.ip);
         changeLocationOnCard(
           2,
