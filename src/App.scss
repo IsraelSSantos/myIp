@@ -6,13 +6,14 @@
 
 body {
     height: 100%;
+    font-family: 'Rubik', sans-serif;
 }
 
 .App {
-    padding: 2% 5%;
+    padding: 2% 4%;
     width: 100%;
-    height: auto;
-    max-height: 30vh;
+    min-height: 30vh;
+    max-height: 40vh;
     background-image: url('./assets/pattern-bg.png');
     background-size: cover;
     background-position: center;

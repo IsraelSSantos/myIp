@@ -1,8 +1,12 @@
 .search-container {
     display: flex;
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
-    #txtField {
-        text-align: center;
+
+    .txtField {
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px 0 0 10px;
+        color: black;
     }
+
 }
