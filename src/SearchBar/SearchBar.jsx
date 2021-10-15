@@ -29,7 +29,7 @@ let SearchBar = (props) => {
       });
   }
   async function setIpOnCard(label) {
-    let ipSet = await initApi(label);
+    const ipSet = await initApi(label);
   }
 
   useEffect(() => {}, []);
