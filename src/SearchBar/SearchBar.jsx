@@ -4,6 +4,7 @@ import Button from "../../node_modules/@material-ui/core/Button";
 import TextField from "../../node_modules/@material-ui/core/TextField";
 import ArrowForwardIosOutlined from "@material-ui/icons/ArrowForwardIosOutlined";
 import axios from "axios";
+import Loader from "../Loader/Loader";
 import $ from "jquery";
 
 let SearchBar = (props) => {
@@ -78,7 +79,9 @@ let SearchBar = (props) => {
             callAllFunc();
           }}
         >
-          <ArrowForwardIosOutlined />
+          <Loader className="loader">
+            <ArrowForwardIosOutlined />
+          </Loader>
         </Button>
       </div>
     </>
