@@ -11,7 +11,7 @@ let SearchBar = (props) => {
   let [label, setLabel] = useState("");
 
   async function initApi(label) {
-    return axios
+    let request = axios
       .get(
         `https://geo.ipify.org/api/v2/country?apiKey=at_sHxDGp8Lay2D3N9Wpn0YP4wlVhn9K&ipAddress=${label}`
       )
@@ -59,6 +59,8 @@ let SearchBar = (props) => {
     changeTimeZoneOnCard();
   };
 
+  const [valueBtn, setValueBtn] = useState(<ArrowForwardIosOutlined />);
+
   return (
     <>
       <div className="search-container">
@@ -79,9 +81,7 @@ let SearchBar = (props) => {
             callAllFunc();
           }}
         >
-          <Loader className="loader">
-            <ArrowForwardIosOutlined />
-          </Loader>
+          {valueBtn}
         </Button>
       </div>
     </>
