@@ -9,7 +9,7 @@ export default function Load(props) {
 
   return (
     <spin.Provider value={{ spinner, setSpinner }}>
-      <Loader type="TailSpin" color="#00BFFF" height={40} width={35} {...props}>
+      <Loader type="TailSpin" color="#00BFFF" height={35} width={35} {...props}>
         {props}
       </Loader>
     </spin.Provider>
