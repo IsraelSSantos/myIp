@@ -3,7 +3,6 @@ import React from 'react';
 import SearchBar from './SearchBar/SearchBar'
 import InfoLocate from './InfoLocate/InfoLocate';
 import Map from './Map/Map'
-import Loading from './Loader/Loader';
 
 function App() {
 
