@@ -1,4 +1,5 @@
 import axios from 'axios';
+import React from 'react';
 
 const Api = {
     getIp: async function (ip) {
@@ -6,6 +7,11 @@ const Api = {
         let { data } = await res;
         return data;
     },
+    getLocal: async function (city) {
+        let requestLocate = axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=67f0137a4e8a5d7ed45a06083efa5505`);
+        let { data } = await requestLocate;
+        return data;
+    }
 
 }
 export default Api;
