@@ -16,6 +16,7 @@
     "axios": "^0.23.0",
     "bootstrap": "^5.1.3",
     "cors": "^2.8.5",
+    "craco": "^0.0.3",
     "jquery": "^3.6.0",
     "react": "^17.0.2",
     "react-content-loader": "^6.0.3",
@@ -30,6 +31,7 @@
     "web-vitals": "^1.0.1",
     "worker-loader": "^3.0.8"
   },
+  "cracoConfig": "./craco-config.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -47,16 +49,17 @@
       ">0.2%",
       "not dead",
       "not op_mini all",
-      "not chrome <51" , 
-      "not safari <10" 
+      "not chrome <51",
+      "not safari <10"
     ],
     "development": [
-      "last 1 versão do Chrome " , 
-    " última 1 versão do firefox " , 
-    " última 1 versão do safari " 
+      "last 1 versão do Chrome ",
+      " última 1 versão do firefox ",
+      " última 1 versão do safari "
     ]
   },
   "devDependencies": {
     "node-sass": "^6.0.1"
   }
 }
+
