@@ -27,7 +27,8 @@
     "sass": "^1.42.1",
     "scss": "^0.2.4",
     "typescript": "^4.4.4",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "worker-loader": "^3.0.8"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -45,12 +46,14 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "not chrome <51" , 
+      "not safari <10" 
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 versão do Chrome " , 
+    " última 1 versão do firefox " , 
+    " última 1 versão do safari " 
     ]
   },
   "devDependencies": {
