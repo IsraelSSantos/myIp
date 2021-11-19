@@ -19,6 +19,7 @@ function App() {
   const [timeZoneOnCard, setTimeZoneOnCard] = useState("");
   const [ispOnCard, setIpsOnCard] = useState("");
   const [valueBtn, setValueBtn] = useState(<Loader />);
+
   // const [mapContainered, setMapContainered] = useState(map.cu);
 
   //Default API MAP settings 
@@ -44,29 +45,17 @@ function App() {
   };
 
   async function initApi() {
-    let request = axios.get(
-      `https://geo.ipify.org/api/v2/country,city?apiKey=at_7LDRF2ZbEAmkxKp57dYuTgxz9kn6k&ipAddress=${label}`).
-      then((response) => {
-        setLat(response.data.location.lat);
-        setLng(response.data.location.lng);
+    const request = await axios.get(
+      `https://geo.ipify.org/api/v2/country,city?apiKey=at_EMvpxCBacXxnWf9mfy99jSGH03kwt&ipAddress=${label}`)
+      .then((response) => {
         setValueBtn(<ArrowForwardIosOutlined />);
         setIpOnCard(response.data.ip);
         setLocationOnCard(`${response.data.location.region}, ${response.data.location.country} 
         ${response.data.as.asn}`);
         setTimeZoneOnCard(`UTC${response.data.location.timezone} `);
         setIpsOnCard(response.data.isp);
-
-        map.current = new mapboxgl.Map({
-          container: mapContainer.current,
-          style: "mapbox://styles/mapbox/streets-v11",
-          center: [lng, lat],
-          zoom: zoom,
-        });
-
-      }).catch((error) => {
-        console.warn("Algo inesperado aconteceu :( " + error);
+        map.current.panTo([response.data.location.lng, response.data.location.lat], 5000);
       });
-
   }
 
   const changeBTN = () => {
