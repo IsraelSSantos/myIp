@@ -7,7 +7,10 @@ import ArrowForwardIosOutlined from "@material-ui/icons/ArrowForwardIosOutlined"
 import axios from "axios";
 import Loader from "./Loader/Loader";
 import mapboxgl from "mapbox-gl";
+import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
 
+
+mapboxgl.workerClass = MapboxWorker;
 mapboxgl.accessToken =
   "pk.eyJ1IjoiaXNyYWVsc29hcmVzIiwiYSI6ImNrdmUyeDhsM2JkYm4yem1udDJ4azA3cnkifQ.Zlsg1JsFYg85GMH6qSAPvQ";
 
