@@ -1,10 +1,16 @@
 .infoLocate {
     display: flex;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white);
     margin: 5% auto 0 auto;
     position: relative;
     border-radius: 20px;
     width: 70%;
     padding: 3% 2%;
     box-shadow: -1px 14px 19px 9px rgba(0, 0, 0, 0.109);
+}
+
+@media screen and (max-width: 1100px) {
+    .infoLocate {
+        flex-direction: column;
+    }
 }

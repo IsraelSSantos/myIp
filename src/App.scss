@@ -1,3 +1,10 @@
+:root {
+    --cyan: #75CFF0;
+    --white: white;
+    --black: #000;
+    --gray: #ccc;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +14,11 @@
 body {
     height: 100%;
     font-family: 'Rubik', sans-serif;
+    background-image: url('./assets/pattern-bg.png');
+    background-size: cover;
+    background-position: center;
+
+    // background-image: var(--cyan);
 }
 
 .App {
@@ -19,7 +31,7 @@ body {
     background-position: center;
 
     h1 {
-        color: white;
+        color: var(--white);
         margin: 2% auto;
         text-align: center;
         font-family: Arial, Helvetica, sans-serif;

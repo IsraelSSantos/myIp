@@ -20,8 +20,6 @@ function App() {
   const [ispOnCard, setIpsOnCard] = useState("");
   const [valueBtn, setValueBtn] = useState(<Loader />);
 
-  // const [mapContainered, setMapContainered] = useState(map.cu);
-
   //Default API MAP settings 
   const mapContainer = useRef(null);
   const map = useRef(null);
